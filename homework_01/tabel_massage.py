@@ -6,8 +6,8 @@ class SomeModel:
 def predict_message_mood(message: str, model: SomeModel,
                          bad_thresholds: float = 0.3,
                          good_thresholds: float = 0.8,) -> str:
-    if model.predict(str) < bad_thresholds:
+    if model.predict(message) < bad_thresholds:
         return "неуд"
-    elif model.predict(str) > good_thresholds:
+    elif model.predict(message) > good_thresholds:
         return "отл"
     return "норм"
